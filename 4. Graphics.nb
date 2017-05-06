@@ -1,0 +1,1025 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     32372,       1017]
+NotebookOptionsPosition[     29393,        910]
+NotebookOutlinePosition[     29758,        926]
+CellTagsIndexPosition[     29715,        923]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "How Do I ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "?"
+}], "Title",
+ CellChangeTimes->{{3.640613383682064*^9, 3.640613409118104*^9}, {
+  3.640615305546171*^9, 3.640615310665464*^9}}],
+
+Cell["by Kush Patel", "Chapter",
+ CellChangeTimes->{{3.640613414529113*^9, 3.6406134163301153`*^9}},
+ FontSize->24]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Module 4 - Graphics", "Title",
+ CellChangeTimes->{{3.6406153015159407`*^9, 3.6406153319286804`*^9}, {
+  3.6584970146531963`*^9, 3.6584970185869856`*^9}, {3.6945741435140247`*^9, 
+  3.6945741504911203`*^9}, {3.694576472667548*^9, 3.694576478240513*^9}},
+ FontSize->36],
+
+Cell[CellGroupData[{
+
+Cell["4.1\tBasic Graphics", "Section",
+ CellChangeTimes->{{3.6584970288161993`*^9, 3.6584970918578157`*^9}, {
+  3.694574321528118*^9, 3.694574339592345*^9}, {3.694576480105013*^9, 
+  3.694576513814167*^9}}],
+
+Cell["\<\
+Mathematica can generate graphics as simple or complex as you want. The \
+function is Graphics[] and this will plot a series of Primitives that \
+Mathematica already provides. Such primitives include Circle, Line, and \
+Rectangle. Use the documentation to see how \
+\>", "Text",
+ CellChangeTimes->{{3.694576515377969*^9, 3.6945765337987967`*^9}, {
+  3.694576568205023*^9, 3.694576675312392*^9}, {3.6945772766912203`*^9, 
+  3.694577284125985*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Graphing Primitives", "Subsection",
+ CellChangeTimes->{{3.6945766996787786`*^9, 3.694576702862446*^9}, {
+  3.694577311232332*^9, 3.6945773233038397`*^9}}],
+
+Cell["This simple command will draw a basic unit circle. ", "Text",
+ CellChangeTimes->{{3.694576706479166*^9, 3.694576715208374*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Circle", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694576680454258*^9, 3.6945766848333273`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[CircleBox[{0, 0}]]], "Output",
+ CellChangeTimes->{3.694576685735746*^9}]
+}, Open  ]],
+
+Cell["\<\
+Notice, Circle itself is a function. Supplying no parameters will generate \
+just a unit circle. Or, you can input some parameters and get different \
+results out.\
+\>", "Text",
+ CellChangeTimes->{{3.694576721580181*^9, 3.694576789562187*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Circle", "[", 
+  RowBox[{"{", 
+   RowBox[{"x", ",", "y"}], "}"}], "]"}]], "Code",
+ CellChangeTimes->{{3.694576834053803*^9, 3.694576850563015*^9}}],
+
+Cell["\<\
+will create a unit circle centered at (x,y). However, Mathematica will \
+intelligently recenter and rescale your graphic around what it thinks gives \
+the best viewpoint. Therefore, it looks identical to the circle above.\
+\>", "Text",
+ CellChangeTimes->{{3.6945768540889263`*^9, 3.6945769253782167`*^9}, {
+  3.694577574113963*^9, 3.694577590642631*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Circle", "[", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1"}], "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694576791495451*^9, 3.694576826853787*^9}, 
+   3.6945769279718647`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[CircleBox[{2, 1}]]], "Output",
+ CellChangeTimes->{3.6945768272978487`*^9, 3.6945769282115297`*^9}]
+}, Open  ]],
+
+Cell["\<\
+If we turn on the Axes, we can see that it is, in fact, shifted.\
+\>", "Text",
+ CellChangeTimes->{{3.694576981528706*^9, 3.6945769967469378`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{
+   RowBox[{"Circle", "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "1"}], "}"}], "]"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6945769310590343`*^9, 3.694576979737001*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[CircleBox[{2, 1}],
+  Axes->True]], "Output",
+ CellChangeTimes->{{3.694576955084729*^9, 3.694576965207244*^9}, 
+   3.694576998817151*^9}]
+}, Open  ]],
+
+Cell["\<\
+You can also define the PlotRange, much like you could in Plot.\
+\>", "Text",
+ CellChangeTimes->{{3.694577605019342*^9, 3.694577617616091*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{
+   RowBox[{"Circle", "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "1"}], "}"}], "]"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6945769310590343`*^9, 3.694576979737001*^9}, {
+  3.694577625828281*^9, 3.694577639090824*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[CircleBox[{2, 1}],
+  Axes->True,
+  PlotRange->{{-5, 5}, {-5, 5}}]], "Output",
+ CellChangeTimes->{{3.694576955084729*^9, 3.694576965207244*^9}, 
+   3.694576998817151*^9, 3.6945776392484713`*^9}]
+}, Open  ]],
+
+Cell["You can change the radius of the circle.", "Text",
+ CellChangeTimes->{{3.694577041401482*^9, 3.694577049400206*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{
+   RowBox[{"Circle", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", "5"}], "]"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.694577050576846*^9, 3.694577086485794*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[CircleBox[{0, 0}, 5],
+  Axes->True]], "Output",
+ CellChangeTimes->{{3.6945770625829487`*^9, 3.694577087028075*^9}}]
+}, Open  ]],
+
+Cell["\<\
+You can plot multiple primitives in the same graphics function.\
+\>", "Text",
+ CellChangeTimes->{{3.694577155951706*^9, 3.694577171090766*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Circle", "[", "]"}], ",", 
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", "4"}], "]"}], ",", 
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "3"}], "}"}]}], "]"}], ",", 
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "2"}], "}"}]}], "]"}]}], "}"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.694577172962674*^9, 3.694577255519141*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{CircleBox[{0, 0}], CircleBox[{0, 0}, 4], 
+   CircleBox[{0, 0}, {2., 3.}], CircleBox[{0, 0}, {3., 2.}]},
+  Axes->True]], "Output",
+ CellChangeTimes->{{3.69457719182277*^9, 3.694577255731784*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Colors", "Subsection",
+ CellChangeTimes->{{3.6945773776201477`*^9, 3.6945773782033377`*^9}}],
+
+Cell["\<\
+Like Circle[], Disk[] is a primitive. This will give a filled in circle. By \
+default, all primitives are colored black. \
+\>", "Text",
+ CellChangeTimes->{{3.6945773343017807`*^9, 3.69457739142516*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Disk", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6945773634689407`*^9, 3.694577366282905*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[DiskBox[{0, 0}]]], "Output",
+ CellChangeTimes->{{3.694577366741568*^9, 3.694577380012723*^9}}]
+}, Open  ]],
+
+Cell["\<\
+You can change this by simply adding a predefined color to the graphics \
+function.\
+\>", "Text",
+ CellChangeTimes->{{3.6945773951117773`*^9, 3.694577417922441*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{"Red", ",", 
+    RowBox[{"Disk", "[", "]"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6945774194411287`*^9, 3.694577424313406*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 0, 0], DiskBox[{0, 0}]}]], "Output",
+ CellChangeTimes->{3.6945774245762053`*^9}]
+}, Open  ]],
+
+Cell["\<\
+If you graph multiple primitives, you can set each of their colors. Be \
+careful, primitives can overlap one another.\
+\>", "Text",
+ CellChangeTimes->{{3.694577439738801*^9, 3.694577496484035*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{"Red", ",", 
+    RowBox[{"Disk", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", "4"}], "]"}], ",", "Blue", ",", 
+    RowBox[{"Disk", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "3"}], "}"}]}], "]"}], ",", "Green", ",", 
+    RowBox[{"Disk", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "2"}], "}"}]}], "]"}], ",", "Black", ",", 
+    RowBox[{"Disk", "[", "]"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694577465017886*^9, 3.69457753300467*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0, 0], DiskBox[{0, 0}, 4]}, 
+   {RGBColor[0, 0, 1], DiskBox[{0, 0}, {2., 3.}]}, 
+   {RGBColor[0, 1, 0], DiskBox[{0, 0}, {3., 2.}]}, 
+   {GrayLevel[0], DiskBox[{0, 0}]}}]], "Output",
+ CellChangeTimes->{{3.694577478521287*^9, 3.6945775332870693`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+You can also define your own colors using RGB, CMYK, LAB, LCH, LUV values and \
+more.\
+\>", "Text",
+ CellChangeTimes->{{3.694577955324626*^9, 3.694577987105998*^9}, {
+  3.6945780175451803`*^9, 3.6945780338215017`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"{", 
+      RowBox[{"1.0", ",", "0.5", ",", "0.25"}], "}"}], "]"}], ",", 
+    RowBox[{"Disk", "[", "]"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694578037052281*^9, 3.694578137081295*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1., 0.5, 0.25], DiskBox[{0, 0}]}]], "Output",
+ CellChangeTimes->{{3.694578073186006*^9, 3.6945781371794577`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.2\t3D Graphics", "Section",
+ CellChangeTimes->{{3.694577662117566*^9, 3.6945776657491083`*^9}}],
+
+Cell["\<\
+You can generate 3-dimensional images using Graphics3D[]. Graphics3D has its \
+own set of Primitives.\
+\>", "Text",
+ CellChangeTimes->{{3.694577669851452*^9, 3.694577799634471*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{"Sphere", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694577771076232*^9, 3.694577776416109*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[SphereBox[{0, 0, 0}]]], "Output",
+ CellChangeTimes->{3.694577776784607*^9}]
+}, Open  ]],
+
+Cell["Most 2D Primitives will not work in Graphics3D.", "Text",
+ CellChangeTimes->{{3.6945778080300817`*^9, 3.694577817695779*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{"Disk", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.694577778836817*^9, 3.694577785115225*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[DiskBox[{0, 0}]]], "Output",
+ CellChangeTimes->{3.694577785462884*^9}]
+}, Open  ]],
+
+Cell["", "Text"],
+
+Cell["\<\
+You can combine functions in Mathematica to quickly generate large structures.\
+\>", "Text",
+ CellChangeTimes->{{3.6945778250224943`*^9, 3.694577870274105*^9}, {
+  3.694577929436103*^9, 3.6945779307633047`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lattice", "=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Sphere", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"i", ",", "j", ",", "k"}], "}"}], ",", "0.5"}], "]"}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "1", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", "5"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics3D", "[", "lattice", "]"}]}], "Input",
+ CellChangeTimes->{{3.694577850132358*^9, 3.69457791120405*^9}, {
+  3.694578165903158*^9, 3.694578171877763*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{{{SphereBox[{1, 1, 1}, 0.5], SphereBox[{1, 1, 2}, 0.5], 
+     SphereBox[{1, 1, 3}, 0.5], SphereBox[{1, 1, 4}, 0.5], 
+     SphereBox[{1, 1, 5}, 0.5]}, {SphereBox[{1, 2, 1}, 0.5], 
+     SphereBox[{1, 2, 2}, 0.5], SphereBox[{1, 2, 3}, 0.5], 
+     SphereBox[{1, 2, 4}, 0.5], SphereBox[{1, 2, 5}, 0.5]}, {
+     SphereBox[{1, 3, 1}, 0.5], SphereBox[{1, 3, 2}, 0.5], 
+     SphereBox[{1, 3, 3}, 0.5], SphereBox[{1, 3, 4}, 0.5], 
+     SphereBox[{1, 3, 5}, 0.5]}, {SphereBox[{1, 4, 1}, 0.5], 
+     SphereBox[{1, 4, 2}, 0.5], SphereBox[{1, 4, 3}, 0.5], 
+     SphereBox[{1, 4, 4}, 0.5], SphereBox[{1, 4, 5}, 0.5]}, {
+     SphereBox[{1, 5, 1}, 0.5], SphereBox[{1, 5, 2}, 0.5], 
+     SphereBox[{1, 5, 3}, 0.5], SphereBox[{1, 5, 4}, 0.5], 
+     SphereBox[{1, 5, 5}, 0.5]}}, {{SphereBox[{2, 1, 1}, 0.5], 
+     SphereBox[{2, 1, 2}, 0.5], SphereBox[{2, 1, 3}, 0.5], 
+     SphereBox[{2, 1, 4}, 0.5], SphereBox[{2, 1, 5}, 0.5]}, {
+     SphereBox[{2, 2, 1}, 0.5], SphereBox[{2, 2, 2}, 0.5], 
+     SphereBox[{2, 2, 3}, 0.5], SphereBox[{2, 2, 4}, 0.5], 
+     SphereBox[{2, 2, 5}, 0.5]}, {SphereBox[{2, 3, 1}, 0.5], 
+     SphereBox[{2, 3, 2}, 0.5], SphereBox[{2, 3, 3}, 0.5], 
+     SphereBox[{2, 3, 4}, 0.5], SphereBox[{2, 3, 5}, 0.5]}, {
+     SphereBox[{2, 4, 1}, 0.5], SphereBox[{2, 4, 2}, 0.5], 
+     SphereBox[{2, 4, 3}, 0.5], SphereBox[{2, 4, 4}, 0.5], 
+     SphereBox[{2, 4, 5}, 0.5]}, {SphereBox[{2, 5, 1}, 0.5], 
+     SphereBox[{2, 5, 2}, 0.5], SphereBox[{2, 5, 3}, 0.5], 
+     SphereBox[{2, 5, 4}, 0.5], SphereBox[{2, 5, 5}, 0.5]}}, {{
+     SphereBox[{3, 1, 1}, 0.5], SphereBox[{3, 1, 2}, 0.5], 
+     SphereBox[{3, 1, 3}, 0.5], SphereBox[{3, 1, 4}, 0.5], 
+     SphereBox[{3, 1, 5}, 0.5]}, {SphereBox[{3, 2, 1}, 0.5], 
+     SphereBox[{3, 2, 2}, 0.5], SphereBox[{3, 2, 3}, 0.5], 
+     SphereBox[{3, 2, 4}, 0.5], SphereBox[{3, 2, 5}, 0.5]}, {
+     SphereBox[{3, 3, 1}, 0.5], SphereBox[{3, 3, 2}, 0.5], 
+     SphereBox[{3, 3, 3}, 0.5], SphereBox[{3, 3, 4}, 0.5], 
+     SphereBox[{3, 3, 5}, 0.5]}, {SphereBox[{3, 4, 1}, 0.5], 
+     SphereBox[{3, 4, 2}, 0.5], SphereBox[{3, 4, 3}, 0.5], 
+     SphereBox[{3, 4, 4}, 0.5], SphereBox[{3, 4, 5}, 0.5]}, {
+     SphereBox[{3, 5, 1}, 0.5], SphereBox[{3, 5, 2}, 0.5], 
+     SphereBox[{3, 5, 3}, 0.5], SphereBox[{3, 5, 4}, 0.5], 
+     SphereBox[{3, 5, 5}, 0.5]}}, {{SphereBox[{4, 1, 1}, 0.5], 
+     SphereBox[{4, 1, 2}, 0.5], SphereBox[{4, 1, 3}, 0.5], 
+     SphereBox[{4, 1, 4}, 0.5], SphereBox[{4, 1, 5}, 0.5]}, {
+     SphereBox[{4, 2, 1}, 0.5], SphereBox[{4, 2, 2}, 0.5], 
+     SphereBox[{4, 2, 3}, 0.5], SphereBox[{4, 2, 4}, 0.5], 
+     SphereBox[{4, 2, 5}, 0.5]}, {SphereBox[{4, 3, 1}, 0.5], 
+     SphereBox[{4, 3, 2}, 0.5], SphereBox[{4, 3, 3}, 0.5], 
+     SphereBox[{4, 3, 4}, 0.5], SphereBox[{4, 3, 5}, 0.5]}, {
+     SphereBox[{4, 4, 1}, 0.5], SphereBox[{4, 4, 2}, 0.5], 
+     SphereBox[{4, 4, 3}, 0.5], SphereBox[{4, 4, 4}, 0.5], 
+     SphereBox[{4, 4, 5}, 0.5]}, {SphereBox[{4, 5, 1}, 0.5], 
+     SphereBox[{4, 5, 2}, 0.5], SphereBox[{4, 5, 3}, 0.5], 
+     SphereBox[{4, 5, 4}, 0.5], SphereBox[{4, 5, 5}, 0.5]}}, {{
+     SphereBox[{5, 1, 1}, 0.5], SphereBox[{5, 1, 2}, 0.5], 
+     SphereBox[{5, 1, 3}, 0.5], SphereBox[{5, 1, 4}, 0.5], 
+     SphereBox[{5, 1, 5}, 0.5]}, {SphereBox[{5, 2, 1}, 0.5], 
+     SphereBox[{5, 2, 2}, 0.5], SphereBox[{5, 2, 3}, 0.5], 
+     SphereBox[{5, 2, 4}, 0.5], SphereBox[{5, 2, 5}, 0.5]}, {
+     SphereBox[{5, 3, 1}, 0.5], SphereBox[{5, 3, 2}, 0.5], 
+     SphereBox[{5, 3, 3}, 0.5], SphereBox[{5, 3, 4}, 0.5], 
+     SphereBox[{5, 3, 5}, 0.5]}, {SphereBox[{5, 4, 1}, 0.5], 
+     SphereBox[{5, 4, 2}, 0.5], SphereBox[{5, 4, 3}, 0.5], 
+     SphereBox[{5, 4, 4}, 0.5], SphereBox[{5, 4, 5}, 0.5]}, {
+     SphereBox[{5, 5, 1}, 0.5], SphereBox[{5, 5, 2}, 0.5], 
+     SphereBox[{5, 5, 3}, 0.5], SphereBox[{5, 5, 4}, 0.5], 
+     SphereBox[{5, 5, 5}, 0.5]}}},
+  ImageSize->{360., 390.70408826933794`},
+  ViewPoint->{0.9646242166653626, -3.153890179747656, 0.7566220025310074},
+  ViewVertical->{-0.08259632413333973, -0.44554152396329944`, 
+   0.8914429862106276}]], "Output",
+ CellChangeTimes->{3.694577911709141*^9, 3.694578172557294*^9}]
+}, Open  ]],
+
+Cell["Lots of room for creativity.", "Text",
+ CellChangeTimes->{{3.6945781498540277`*^9, 3.694578153765629*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lattice2", "=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Hue", "[", 
+        FractionBox[
+         RowBox[{"i", "*", "j", "*", "k"}], "125"], "]"}], ",", 
+       RowBox[{"Sphere", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"i", ",", "j", ",", "k"}], "}"}], ",", "0.5"}], "]"}]}], 
+      "}"}], "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "1", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", "5"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics3D", "[", "lattice2", "]"}]}], "Input",
+ CellChangeTimes->{{3.694577850132358*^9, 3.69457791120405*^9}, {
+  3.694578165903158*^9, 3.694578201736517*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{{{
+     {Hue[
+       NCache[
+        Rational[1, 125], 0.008]], SphereBox[{1, 1, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 125], 0.016]], SphereBox[{1, 1, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 125], 0.024]], SphereBox[{1, 1, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 125], 0.032]], SphereBox[{1, 1, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[1, 25], 0.04]], SphereBox[{1, 1, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[2, 125], 0.016]], SphereBox[{1, 2, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 125], 0.032]], SphereBox[{1, 2, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 125], 0.048]], SphereBox[{1, 2, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 125], 0.064]], SphereBox[{1, 2, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 25], 0.08]], SphereBox[{1, 2, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[3, 125], 0.024]], SphereBox[{1, 3, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 125], 0.048]], SphereBox[{1, 3, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[9, 125], 0.072]], SphereBox[{1, 3, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{1, 3, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 25], 0.12]], SphereBox[{1, 3, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[4, 125], 0.032]], SphereBox[{1, 4, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 125], 0.064]], SphereBox[{1, 4, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{1, 4, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 125], 0.128]], SphereBox[{1, 4, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{1, 4, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[1, 25], 0.04]], SphereBox[{1, 5, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 25], 0.08]], SphereBox[{1, 5, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 25], 0.12]], SphereBox[{1, 5, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{1, 5, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[1, 5], 0.2]], SphereBox[{1, 5, 5}, 0.5]}}}, {{
+     {Hue[
+       NCache[
+        Rational[2, 125], 0.016]], SphereBox[{2, 1, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 125], 0.032]], SphereBox[{2, 1, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 125], 0.048]], SphereBox[{2, 1, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 125], 0.064]], SphereBox[{2, 1, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 25], 0.08]], SphereBox[{2, 1, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[4, 125], 0.032]], SphereBox[{2, 2, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 125], 0.064]], SphereBox[{2, 2, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{2, 2, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 125], 0.128]], SphereBox[{2, 2, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{2, 2, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[6, 125], 0.048]], SphereBox[{2, 3, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{2, 3, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[18, 125], 0.144]], SphereBox[{2, 3, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[24, 125], 0.192]], SphereBox[{2, 3, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 25], 0.24]], SphereBox[{2, 3, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[8, 125], 0.064]], SphereBox[{2, 4, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 125], 0.128]], SphereBox[{2, 4, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[24, 125], 0.192]], SphereBox[{2, 4, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[32, 125], 0.256]], SphereBox[{2, 4, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 25], 0.32]], SphereBox[{2, 4, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[2, 25], 0.08]], SphereBox[{2, 5, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{2, 5, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 25], 0.24]], SphereBox[{2, 5, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 25], 0.32]], SphereBox[{2, 5, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 5], 0.4]], SphereBox[{2, 5, 5}, 0.5]}}}, {{
+     {Hue[
+       NCache[
+        Rational[3, 125], 0.024]], SphereBox[{3, 1, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 125], 0.048]], SphereBox[{3, 1, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[9, 125], 0.072]], SphereBox[{3, 1, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{3, 1, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 25], 0.12]], SphereBox[{3, 1, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[6, 125], 0.048]], SphereBox[{3, 2, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{3, 2, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[18, 125], 0.144]], SphereBox[{3, 2, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[24, 125], 0.192]], SphereBox[{3, 2, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 25], 0.24]], SphereBox[{3, 2, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[9, 125], 0.072]], SphereBox[{3, 3, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[18, 125], 0.144]], SphereBox[{3, 3, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[27, 125], 0.216]], SphereBox[{3, 3, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[36, 125], 0.288]], SphereBox[{3, 3, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[9, 25], 0.36]], SphereBox[{3, 3, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{3, 4, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[24, 125], 0.192]], SphereBox[{3, 4, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[36, 125], 0.288]], SphereBox[{3, 4, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[48, 125], 0.384]], SphereBox[{3, 4, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 25], 0.48]], SphereBox[{3, 4, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[3, 25], 0.12]], SphereBox[{3, 5, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 25], 0.24]], SphereBox[{3, 5, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[9, 25], 0.36]], SphereBox[{3, 5, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 25], 0.48]], SphereBox[{3, 5, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 5], 0.6]], SphereBox[{3, 5, 5}, 0.5]}}}, {{
+     {Hue[
+       NCache[
+        Rational[4, 125], 0.032]], SphereBox[{4, 1, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 125], 0.064]], SphereBox[{4, 1, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{4, 1, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 125], 0.128]], SphereBox[{4, 1, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{4, 1, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[8, 125], 0.064]], SphereBox[{4, 2, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 125], 0.128]], SphereBox[{4, 2, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[24, 125], 0.192]], SphereBox[{4, 2, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[32, 125], 0.256]], SphereBox[{4, 2, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 25], 0.32]], SphereBox[{4, 2, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[12, 125], 0.096]], SphereBox[{4, 3, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[24, 125], 0.192]], SphereBox[{4, 3, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[36, 125], 0.288]], SphereBox[{4, 3, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[48, 125], 0.384]], SphereBox[{4, 3, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 25], 0.48]], SphereBox[{4, 3, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[16, 125], 0.128]], SphereBox[{4, 4, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[32, 125], 0.256]], SphereBox[{4, 4, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[48, 125], 0.384]], SphereBox[{4, 4, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[64, 125], 0.512]], SphereBox[{4, 4, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 25], 0.64]], SphereBox[{4, 4, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{4, 5, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 25], 0.32]], SphereBox[{4, 5, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 25], 0.48]], SphereBox[{4, 5, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 25], 0.64]], SphereBox[{4, 5, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 5], 0.8]], SphereBox[{4, 5, 5}, 0.5]}}}, {{
+     {Hue[
+       NCache[
+        Rational[1, 25], 0.04]], SphereBox[{5, 1, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 25], 0.08]], SphereBox[{5, 1, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 25], 0.12]], SphereBox[{5, 1, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{5, 1, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[1, 5], 0.2]], SphereBox[{5, 1, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[2, 25], 0.08]], SphereBox[{5, 2, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{5, 2, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 25], 0.24]], SphereBox[{5, 2, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 25], 0.32]], SphereBox[{5, 2, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 5], 0.4]], SphereBox[{5, 2, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[3, 25], 0.12]], SphereBox[{5, 3, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[6, 25], 0.24]], SphereBox[{5, 3, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[9, 25], 0.36]], SphereBox[{5, 3, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 25], 0.48]], SphereBox[{5, 3, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 5], 0.6]], SphereBox[{5, 3, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[4, 25], 0.16]], SphereBox[{5, 4, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[8, 25], 0.32]], SphereBox[{5, 4, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[12, 25], 0.48]], SphereBox[{5, 4, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[16, 25], 0.64]], SphereBox[{5, 4, 4}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 5], 0.8]], SphereBox[{5, 4, 5}, 0.5]}}, {
+     {Hue[
+       NCache[
+        Rational[1, 5], 0.2]], SphereBox[{5, 5, 1}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[2, 5], 0.4]], SphereBox[{5, 5, 2}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[3, 5], 0.6]], SphereBox[{5, 5, 3}, 0.5]}, 
+     {Hue[
+       NCache[
+        Rational[4, 5], 0.8]], SphereBox[{5, 5, 4}, 0.5]}, 
+     {Hue[1], SphereBox[{5, 5, 5}, 0.5]}}}},
+  ImageSize->{360., 390.70408826933794`},
+  ViewPoint->{1.973945993774949, 1.9549418802043217`, 1.9317710678760618`},
+  ViewVertical->{0.15596176422516012`, 
+   0.980849597295097, -0.11666188574603684`}]], "Output",
+ CellChangeTimes->{3.694578201842895*^9}]
+}, Open  ]],
+
+Cell["\<\
+You can use your mouse to click and drag a 3D structure to rotate and get a \
+full view of it.There is also a Plot3D function that will plot in the z-axis \
+as functions of x- and y-coordinates.\
+\>", "Text",
+ CellChangeTimes->{{3.694578214798278*^9, 3.694578231310371*^9}, {
+  3.694578278908396*^9, 3.694578324721134*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 2031},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>1.15 Inherited,
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 211, 7, 170, "Title"],
+Cell[794, 31, 115, 2, 96, "Chapter"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[946, 38, 273, 4, 147, "Title"],
+Cell[CellGroupData[{
+Cell[1244, 46, 206, 3, 114, "Section"],
+Cell[1453, 51, 456, 8, 140, "Text"],
+Cell[CellGroupData[{
+Cell[1934, 63, 160, 2, 80, "Subsection"],
+Cell[2097, 67, 133, 1, 55, "Text"],
+Cell[CellGroupData[{
+Cell[2255, 72, 157, 3, 91, "Input"],
+Cell[2415, 77, 99, 2, 458, "Output"]
+}, Open  ]],
+Cell[2529, 82, 253, 5, 98, "Text"],
+Cell[2785, 89, 171, 4, 75, "Code"],
+Cell[2959, 95, 364, 6, 140, "Text"],
+Cell[CellGroupData[{
+Cell[3348, 105, 237, 6, 91, "Input"],
+Cell[3588, 113, 125, 2, 458, "Output"]
+}, Open  ]],
+Cell[3728, 118, 156, 3, 55, "Text"],
+Cell[CellGroupData[{
+Cell[3909, 125, 273, 7, 91, "Input"],
+Cell[4185, 134, 163, 4, 439, "Output"]
+}, Open  ]],
+Cell[4363, 141, 153, 3, 55, "Text"],
+Cell[CellGroupData[{
+Cell[4541, 148, 579, 17, 91, "Input"],
+Cell[5123, 167, 220, 5, 459, "Output"]
+}, Open  ]],
+Cell[5358, 175, 122, 1, 55, "Text"],
+Cell[CellGroupData[{
+Cell[5505, 180, 298, 8, 91, "Input"],
+Cell[5806, 190, 142, 3, 458, "Output"]
+}, Open  ]],
+Cell[5963, 196, 153, 3, 55, "Text"],
+Cell[CellGroupData[{
+Cell[6141, 203, 760, 23, 148, "Input"],
+Cell[6904, 228, 222, 4, 463, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7175, 238, 98, 1, 80, "Subsection"],
+Cell[7276, 241, 212, 4, 98, "Text"],
+Cell[CellGroupData[{
+Cell[7513, 249, 155, 3, 91, "Input"],
+Cell[7671, 254, 121, 2, 458, "Output"]
+}, Open  ]],
+Cell[7807, 259, 175, 4, 55, "Text"],
+Cell[CellGroupData[{
+Cell[8007, 267, 206, 5, 91, "Input"],
+Cell[8216, 274, 123, 3, 458, "Output"]
+}, Open  ]],
+Cell[8354, 280, 207, 4, 98, "Text"],
+Cell[CellGroupData[{
+Cell[8586, 288, 726, 21, 148, "Input"],
+Cell[9315, 311, 294, 6, 458, "Output"]
+}, Open  ]],
+Cell[9624, 320, 228, 5, 55, "Text"],
+Cell[CellGroupData[{
+Cell[9877, 329, 309, 8, 91, "Input"],
+Cell[10189, 339, 153, 3, 458, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10403, 349, 103, 1, 114, "Section"],
+Cell[10509, 352, 191, 4, 98, "Text"],
+Cell[CellGroupData[{
+Cell[10725, 360, 157, 3, 83, "Input"],
+Cell[10885, 365, 104, 2, 494, "Output"]
+}, Open  ]],
+Cell[11004, 370, 131, 1, 55, "Text"],
+Cell[CellGroupData[{
+Cell[11160, 375, 155, 3, 91, "Input"],
+Cell[11318, 380, 99, 2, 494, "Output"]
+}, Open  ]],
+Cell[11432, 385, 16, 0, 55, "Text"],
+Cell[11451, 387, 221, 4, 55, "Text"],
+Cell[CellGroupData[{
+Cell[11697, 395, 713, 19, 262, "Input"],
+Cell[12413, 416, 4117, 68, 494, "Output"]
+}, Open  ]],
+Cell[16545, 487, 112, 1, 55, "Text"],
+Cell[CellGroupData[{
+Cell[16682, 492, 881, 24, 348, "Input"],
+Cell[17566, 518, 11451, 379, 494, "Output"]
+}, Open  ]],
+Cell[29032, 900, 333, 6, 98, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

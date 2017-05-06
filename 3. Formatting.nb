@@ -1,0 +1,210 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6125,        202]
+NotebookOptionsPosition[      4901,        152]
+NotebookOutlinePosition[      5266,        168]
+CellTagsIndexPosition[      5223,        165]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "How Do I ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "?"
+}], "Title",
+ CellChangeTimes->{{3.640613383682064*^9, 3.640613409118104*^9}, {
+  3.640615305546171*^9, 3.640615310665464*^9}}],
+
+Cell["by Kush Patel", "Chapter",
+ CellChangeTimes->{{3.640613414529113*^9, 3.6406134163301153`*^9}},
+ FontSize->24]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Module 3 - Formatting", "Title",
+ CellChangeTimes->{{3.6406153015159407`*^9, 3.6406153319286804`*^9}, {
+  3.6584970146531963`*^9, 3.6584970185869856`*^9}, {3.6945741435140247`*^9, 
+  3.6945741504911203`*^9}},
+ FontSize->36],
+
+Cell[CellGroupData[{
+
+Cell["3.1\tFormat Style\t", "Section",
+ CellChangeTimes->{{3.6584970288161993`*^9, 3.6584970918578157`*^9}, {
+  3.694574321528118*^9, 3.694574339592345*^9}}],
+
+Cell[TextData[{
+ "If you\[CloseCurlyQuote]ve made it this far, you\[CloseCurlyQuote]ll have \
+noticed that these Mathematica tutorial notebooks are composed of different \
+colored, sized, and styled text. Mathematica organizes all of its code into \
+\[OpenCurlyDoubleQuote]cells\[CloseCurlyDoubleQuote] and each of these cells \
+has a specific predefined styling. By default, the cell type you\
+\[CloseCurlyQuote]ll type into is for executable code, called \
+\[OpenCurlyDoubleQuote]input\[CloseCurlyDoubleQuote]. The styling used for \
+this particular paragraph is \[OpenCurlyDoubleQuote]text\
+\[CloseCurlyDoubleQuote]. This one is primarily used for notes, explanations, \
+and discussions. \n\nYou can quickly choose between different styles by using \
+",
+ Cell[BoxData["\[AltKey]"], "Input"],
+ "+ [#]. The default ones are shown below:"
+}], "Text",
+ CellChangeTimes->{{3.694574515604697*^9, 3.694574526672883*^9}, {
+  3.694574556845954*^9, 3.694574898590392*^9}, {3.694574953611973*^9, 
+  3.694574993292554*^9}, {3.694575150999127*^9, 3.694575157464601*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Title (\[AltKey]+1)", "Title",
+ CellChangeTimes->{{3.6945750015597553`*^9, 3.694575007108572*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Chapter (\[AltKey]+2)", "Chapter",
+ CellChangeTimes->{{3.694575010363268*^9, 3.694575017405835*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Subchapter (\[AltKey]+3)", "Subchapter",
+ CellChangeTimes->{{3.6945750275450497`*^9, 3.6945750338933287`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Section (\[AltKey]+4)", "Section",
+ CellChangeTimes->{{3.6945750449438887`*^9, 3.694575056483852*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Subsection (\[AltKey]+5)", "Subsection",
+ CellChangeTimes->{{3.694575060585269*^9, 3.694575071890394*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Subsubsection (\[AltKey]+6)", "Subsubsection",
+ CellChangeTimes->{{3.694575110318832*^9, 3.694575115703861*^9}}],
+
+Cell["Text (\[AltKey]+7)", "Text",
+ CellChangeTimes->{{3.694575129983837*^9, 3.694575133957781*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Code", " ", 
+  RowBox[{"(", 
+   RowBox[{"\[AltKey]", "+", "8"}], ")"}]}]], "Code",
+ CellChangeTimes->{{3.694575139336396*^9, 3.694575174246388*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Input", " ", 
+  RowBox[{"(", 
+   RowBox[{"\[AltKey]", "+", "9"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.694575177367982*^9, 3.694575184940939*^9}}],
+
+Cell["\<\
+
+
+
+You can find more different styles by navigating to Format \[Rule] Style in \
+the menu bar. You can also right-click on a cell and choose \
+\[OpenCurlyDoubleQuote]Style\[CloseCurlyDoubleQuote] from the dropdown menu.\
+\>", "Text",
+ CellChangeTimes->{{3.6945751885260553`*^9, 3.694575291084056*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Minimizing", "Subsection",
+ CellChangeTimes->{{3.694575312103281*^9, 3.694575327129841*^9}}],
+
+Cell["\<\
+You\[CloseCurlyQuote]ll also have noticed some brackets on the right sight of \
+the notebook window. Each of these marks the scope of the cell. \
+Double-clicking on the brackets will minimize all the sub-cells beneath it. \
+Double-clicking again will expand the sub-cells again. Try it out with the \
+list of styles above.
+
+This can be useful for hiding code used to generate figures or charts, and \
+that code is not necessary for presentation or printing purposes.\
+\>", "Text",
+ CellChangeTimes->{{3.694575346225572*^9, 3.6945753612061453`*^9}, {
+  3.694575422875321*^9, 3.694575459091816*^9}, {3.6945755017342863`*^9, 
+  3.6945756657725143`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 2031},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>1.15 Inherited,
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 211, 7, 170, "Title"],
+Cell[794, 31, 115, 2, 96, "Chapter"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[946, 38, 229, 4, 147, "Title"],
+Cell[CellGroupData[{
+Cell[1200, 46, 157, 2, 114, "Section"],
+Cell[1360, 50, 1060, 17, 353, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2469, 73, 104, 1, 170, "Title"],
+Cell[CellGroupData[{
+Cell[2598, 78, 106, 1, 124, "Chapter"],
+Cell[CellGroupData[{
+Cell[2729, 83, 116, 1, 113, "Subchapter"],
+Cell[CellGroupData[{
+Cell[2870, 88, 108, 1, 114, "Section"],
+Cell[CellGroupData[{
+Cell[3003, 93, 112, 1, 80, "Subsection"],
+Cell[CellGroupData[{
+Cell[3140, 98, 118, 1, 67, "Subsubsection"],
+Cell[3261, 101, 100, 1, 55, "Text"],
+Cell[3364, 104, 172, 4, 75, "Code"],
+Cell[3539, 110, 174, 4, 55, "Input"],
+Cell[3716, 116, 311, 8, 225, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4076, 130, 98, 1, 80, "Subsection"],
+Cell[4177, 133, 660, 12, 268, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
